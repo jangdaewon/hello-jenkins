@@ -18,6 +18,6 @@ node {
 
     stage("Deployment") {
         echo "Deploy ${env.APP_NAME}"
-        sh 'nohup ./mvnw spring-boot:run -Dserver.port=9090 &'
+        sh './mvnw spring-boot:run -Dserver.port=9090'
     }
 }
