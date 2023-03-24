@@ -11,6 +11,7 @@ node {
     stage('Build') {
         echo "Build ${env.APP_NAME}"
         withMaven(maven: 'Maven3', mavenLocalRepo: '.repository') {
+            sh 'chmod +x ./mvnw'
             sh 'mvn clean install -DskipTests'
         }
     }
